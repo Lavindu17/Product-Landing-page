@@ -9,6 +9,7 @@ import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PremiumFeatureShowcase from "./components/PremiumFeatureShowcase";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Hero />
       <About />
       <PremiumFeatureShowcase />
+      <Testimonials />
       <FAQ />
       <Contact />
       <Footer />

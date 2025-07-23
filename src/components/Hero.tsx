@@ -75,7 +75,7 @@ const Hero = () => {
           <div className="relative max-w-4xl mx-auto">
             <div className="relative bg-gradient-to-br from-slate-800/30 to-indigo-800/30 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/10">
               <img
-                src="../public/weatherguard-hero.jpg"
+                src="../public/clothrack 2.png"
                 alt="WeatherGuard Pro Smart Cloth Rack - Outdoor drying with automatic rain protection"
                 className="w-full h-64 md:h-96 object-cover"
               />

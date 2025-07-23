@@ -1,34 +1,35 @@
 import React from "react";
-import { Heart, Phone, Mail, MapPin } from "lucide-react";
+import { CloudRain, Phone, Mail, MapPin, Truck, Shield } from "lucide-react";
 
-const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+const Footer: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer className="bg-slate-800 text-white py-12">
+    <footer className="bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Practice Info */}
+          {/* Company */}
           <div>
             <div className="flex items-center mb-4">
-              <Heart className="h-6 w-6 text-emerald-400 mr-2" />
-              <h3 className="text-xl font-bold">Bright Mind Counseling</h3>
+              <div className="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg flex items-center justify-center mr-2 shadow-lg">
+                <CloudRain className="h-5 w-5 text-white" />
+              </div>
+              <h3 className="text-xl font-bold">WeatherGuard Pro</h3>
             </div>
             <p className="text-slate-300 mb-4">
-              Professional, compassionate counseling services to help you find
-              your path to mental wellness.
+              Smart, solar-powered drying + automatic rain protection for your
+              outdoor laundry.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.linkedin.com/in/priyantha-sajeewan-b94785196/"
-                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+                href="#"
                 aria-label="LinkedIn"
+                className="text-slate-300 hover:text-amber-400 transition-colors"
               >
+                {/* LinkedIn SVG */}
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
@@ -39,15 +40,16 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
-                aria-label="Psychology Today"
+                aria-label="Facebook"
+                className="text-slate-300 hover:text-amber-400 transition-colors"
               >
+                {/* Facebook SVG */}
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  <path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.39-3.62 3.51-3.62.99 0 2.02.18 2.02.18v2.22h-1.13c-1.12 0-1.47.7-1.47 1.42v1.7h2.5l-.4 2.9h-2.1v7.03C18.34 21.25 22 17.09 22 12.07z" />
                 </svg>
               </a>
             </div>
@@ -56,111 +58,87 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
-                >
-                  About Me
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("tools")}
-                  className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
-                >
-                  Assessment Tools
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-slate-300">
-              <li>Anxiety & Depression</li>
-              <li>Trauma & PTSD</li>
-              <li>Relationship Counseling</li>
-              <li>Stress Management</li>
-              <li>Addiction Recovery</li>
-              <li>Life Transitions</li>
+              {[
+                ["Home", "home"],
+                ["Features", "features"],
+                ["How It Works", "how-it-works"],
+                ["Testimonials", "testimonials"],
+                ["FAQ", "faq"],
+                ["Contact", "contact"],
+              ].map(([label, id]) => (
+                <li key={id}>
+                  <button
+                    onClick={() => scrollToSection(id)}
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Products */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Products</h4>
+            <ul className="space-y-2 text-slate-300">
+              <li>Standard Model</li>
+              <li>Deluxe Model</li>
+              <li>Commercial Model</li>
+              <li>Custom Solutions</li>
+              <li>Request Demo</li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-3">
+            <div className="space-y-4 text-slate-300 text-sm">
               <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-emerald-400 mr-2 mt-0.5" />
-                <div className="text-slate-300 text-sm">
-                  235/A,
+                <MapPin className="h-5 w-5 text-amber-400 mr-2 mt-0.5" />
+                <div>
+                  235/A Wawila Road
                   <br />
-                  Wawila Road (70620)
+                  (70620), Sri Lanka
                 </div>
               </div>
               <div className="flex items-center">
-                <Phone className="h-5 w-5 text-emerald-400 mr-2" />
+                <Phone className="h-5 w-5 text-amber-400 mr-2" />
                 <a
-                  href="tel:+9471800623"
-                  className="text-slate-300 hover:text-emerald-400 transition-colors duration-200 text-sm"
+                  href="tel:+94718000623"
+                  className="hover:text-amber-400 transition-colors"
                 >
                   (+94) 71 8000 623
                 </a>
               </div>
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-emerald-400 mr-2" />
+                <Mail className="h-5 w-5 text-amber-400 mr-2" />
                 <a
-                  href="mailto:sajeevansltas@gmail.com"
-                  className="text-slate-300 hover:text-emerald-400 transition-colors duration-200 text-sm"
+                  href="mailto:info@weatherguardpro.com"
+                  className="hover:text-amber-400 transition-colors"
                 >
-                  sajeevansltas@gmail.com
+                  info@weatherguardpro.com
                 </a>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="border-t border-slate-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm">
-            © 2025 Bright Mind Counseling. All rights reserved.
+            © 2025 WeatherGuard Pro. All rights reserved.
           </p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a
-              href="#"
-              className="text-slate-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
-            >
+          <div className="flex space-x-4 mt-4 md:mt-0 text-slate-400 text-sm">
+            <a href="#" className="hover:text-amber-400 transition-colors">
               Privacy Policy
             </a>
-            <a
-              href="#"
-              className="text-slate-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
-            >
+            <a href="#" className="hover:text-amber-400 transition-colors">
               Terms of Service
             </a>
-            <a
-              href="#"
-              className="text-slate-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
-            >
-              HIPAA Notice
+            <a href="#" className="hover:text-amber-400 transition-colors">
+              Warranty Info
             </a>
           </div>
         </div>

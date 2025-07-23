@@ -103,7 +103,7 @@ const About = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-slate-800/50 to-blue-800/50 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
               <img
-                src="../public/weatherguard-pro.jpg"
+                src="../public/shirt.png"
                 alt="WeatherGuard Pro - Smart Weather-Responsive Cloth Rack"
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
